@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from health_resources import views
+# from forum import views
+# from health_resources.views import article_detail,article_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),

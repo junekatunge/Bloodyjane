@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'health_resources',#for articles
-    'machina',#for community support
+    # 'machina',#for community support
     'forum',
     # 'mptt',
     # 'haystack',

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Forums</h1>
+<ul>
+    {% for category in categories %}
+        <h2>{{ category.name }}</h2>
+        <ul>
+            {% for forum in forums %}
+                {% if forum.category == category %}
+                    <li>
+                        <a href="{% url 'forum_detail' forum.id %}">{{ forum.name }}</a>
+                        <p>{{ forum.description }}</p>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</ul>
+{% endblock %}
