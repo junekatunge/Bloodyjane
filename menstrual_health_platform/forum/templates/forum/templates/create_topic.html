@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Topics in {{ category.name }}{% endblock %}
+
+{% block content %}
+    <h1>Topics in {{ category.name }}</h1>
+
+    <ul class="list-group">
+        {% for topic in topics %}
+            <li class="list-group-item">
+                <a href="{% url 'forum:topic_posts' topic.pk %}">{{ topic.name }}</a>
+                <small class="text-muted">
+                    Last post by {{ topic.last_post.author.username }} on {{ topic.last_post.created|date:"Y-m-d" }}
+                </small>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Option to create a new topic -->
+    {% if user.is_authenticated %}
+        <a href="{% url 'forum:create_topic' category.pk %}" class="btn btn-primary">Create New Topic</a>
+    {% else %}
+        <a href="{% url 'accounts:login' %}" class="btn btn-primary">Log in to create a topic</a>
+    {% endif %}
+
+{% endblock %}

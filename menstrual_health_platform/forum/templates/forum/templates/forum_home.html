@@ -1,0 +1,19 @@
+*   Create a template to display the forum home page:
+
+    ```html
+    {% extends 'base.html' %}
+
+    {% block title %}Forum{% endblock %}
+
+    {% block content %}
+    <h1>Forum</h1>
+
+    <ul>
+        {% for forum in forums %}
+        <li>
+            <a href="{% url 'machina:forum' forum.pk %}">{{ forum.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+    ```
