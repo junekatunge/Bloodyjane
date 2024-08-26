@@ -69,3 +69,8 @@ def post_create(request, forum_id):
     else:
         form = PostForm()
     return render(request, 'forum/post_create.html', {'form': form, 'forum': forum})
+
+@login_required
+def post_detail(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    return render(request, 'forum/post_detail.html', {'post': post})
