@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'health_resources',#for articles
     # 'machina',#for community support
     'forum',
+    'symptom',
     # 'mptt',
     # 'haystack',
     # 'widget_tweaks',

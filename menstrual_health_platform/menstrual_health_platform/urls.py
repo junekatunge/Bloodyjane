@@ -27,6 +27,7 @@ urlpatterns = [
     path('<int:article_id>/', views.article_detail, name='article_detail'),
     #for community
     path('forum/', include('forum.urls')),
+    path('symptom/', include('symptom.urls'))
     
 ]
 

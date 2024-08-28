@@ -7,12 +7,12 @@
         <h2>{{ category.name }}</h2>
         <ul>
             {% for forum in forums %}
-                {% if forum.category == category %}
+                {% if forum.category == category %}  <!-- This is the condition -->
                     <li>
                         <a href="{% url 'forum_detail' forum.id %}">{{ forum.name }}</a>
                         <p>{{ forum.description }}</p>
                     </li>
-                {% endif %}
+                {% endif %}  <!-- End of the condition -->
             {% endfor %}
         </ul>
     {% endfor %}
