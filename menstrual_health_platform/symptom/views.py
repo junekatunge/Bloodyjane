@@ -12,7 +12,7 @@ def symptom_log(request):
             return redirect('symptom_log_success')  # Redirect to success view
     else:
         form = SymptomLogForm()
-    return render(request, 'health_resources/symptom_log.html', {'form': form})
+    return render(request, 'symptom/symptom_log.html', {'form': form})
 
 def symptom_log_success(request):#if its a GET requuest
-    return render(request, 'health_resources/symptom_log_success.html')
+    return render(request, 'symptom/symptom_log_success.html')

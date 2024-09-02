@@ -10,7 +10,8 @@
     <h1>Symptom Log</h1>
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}  <!-- Display the form fields -->
+        {{form.as_p}}<!--as_p method used to represent form field in a visuallly appealing way on html-->
+    
         <button type="submit" class="btn btn-primary">Submit Log</button>
     </form>
 </body>

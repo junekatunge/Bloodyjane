@@ -5,8 +5,22 @@ from django.contrib.auth.models import User
 class SymptomLog(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField()
-    mood = models.CharField(max_length=20)  # You can use choices here
-    sleep = models.CharField(max_length=20)  # Choices (good, poor, etc.)
+    MOOD_CHOICES = [
+        ('Excellent', 'Excellent'),
+        ('Good','Good'),
+        ('Neutral','Neutral'),
+        ('Bad','Bad')
+    ]
+    mood = models.CharField(max_length=20,choices=MOOD_CHOICES)  # mood choices replaces charfielld
+    
+    SLEEP_CHOICES = [
+        ('Excellent', 'Excellent'),
+        ('Good', 'Good'),
+        ('Fair', 'Fair'),
+        ('Poor', 'Poor'),
+        ('Very Poor', 'Very Poor'),
+    ]
+    sleep = models.CharField(max_length=20, choices= SLEEP_CHOICES)  # Choices (good, poor, etc.)
     other_symptoms = models.TextField(blank=True)
     notes = models.TextField(blank=True)
     
